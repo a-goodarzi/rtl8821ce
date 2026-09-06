@@ -67,6 +67,15 @@ In order to install the driver open a terminal in the directory with the source 
 ```
 sudo ./dkms-install.sh
 ```
+If you have another `rtl8821ce` DKMS version registered already (e.g. from an AUR package or a previous manual install) and want it removed first, pass `--remove-old`:
+```
+sudo ./dkms-install.sh --remove-old
+```
+
+### Fork-specific helpers
+This fork adds two scripts, not present upstream:
+- `./which-driver.sh` — shows whether the in-kernel `rtw88_8821ce` driver or this repo's out-of-tree `8821ce` driver is currently active.
+- `sudo ./toggle-driver.sh [oot|intree]` — hot-swaps between the two without a reboot.
 
 ## Removal of Driver
 Open a terminal window and git clone the repository to your local disk
